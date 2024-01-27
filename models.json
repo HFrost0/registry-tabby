@@ -84,14 +84,6 @@
     "sha256": "5ac3ba2eecc4f41d0cd65a5e6d875d38d4c3dd4ebb1161b85e5134817b484938"
   },
   {
-    "name": "Mixtral_34Bx2_MoE_60B",
-    "prompt_template": "<s>{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + '</s> ' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
-    "urls": [
-        "https://huggingface.co/TheBloke/Mixtral_34Bx2_MoE_60B-GGUF/blob/main/mixtral_34bx2_moe_60b.Q5_K_M.gguf"
-    ],
-    "sha256": "ac926afdc02b179f68e72ac69810485593aec9c442f63e6cb21893bb28a3887e"
-  },
-  {
     "name": "DeepseekCoder-1.3B",
     "license_name": "Deepseek License",
     "license_url": "https://github.com/deepseek-ai/deepseek-coder/blob/main/LICENSE-MODEL",
@@ -112,5 +104,16 @@
       "https://huggingface.co/TheBloke/deepseek-coder-6.7B-base-GGUF/resolve/main/deepseek-coder-6.7b-base.Q8_0.gguf"
     ],
     "sha256": "a2f82242ac5e465037cbf1ed754f04f0be044ee196e1589905f9e4dcd0e6559d"
+  }，
+  {
+    "name": "Stable-Code-3B",
+    "provider_url": "https://huggingface.co/TheBloke/stable-code-3b-GGUF",
+    "license_name": "STABILITY AI NON-COMMERCIAL RESEARCH COMMUNITY LICENSE",
+    "license_url": "https://huggingface.co/stabilityai/stable-code-3b/blob/main/LICENSE",
+    "prompt_template": "<fim_prefix>{prefix}<fim_suffix>{suffix}<fim_middle>",
+    "urls": [
+      "https://huggingface.co/TheBloke/stable-code-3b-GGUF/blob/main/stable-code-3b.Q8_0.gguf"
+    ],
+    "sha256": "b035a641f366a02231ddd137842e760b20b9e6e4d99ecc20bea6cf999ed62331"
   }
 ]
